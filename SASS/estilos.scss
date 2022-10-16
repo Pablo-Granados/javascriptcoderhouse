@@ -1,1 +1,12 @@
 @import "generales";
+@import "tablas";
+
+#titulo, #parrafo{
+    color: whitesmoke;
+    text-align: center;
+}
+
+.lupita{
+    display: flex;
+    justify-content: center;
+}
