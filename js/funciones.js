@@ -14,46 +14,46 @@ function login() {
 }
 // login()
 
-const crearID = () => parseInt(Math.random() * 100000)
-
-const agregarServicio = () => {
-    let id = crearID()
-    let nombre = prompt("Ingrese nuevo servicio")
-    let plista = parseFloat(prompt("Ingrese su precio de lista"))
-
-    servicios.push(new Servicios(id, nombre, plista))
-
-    listarServicios()
+const activarBotonesAdd = ()=> { //asigno evento click en todos los botones de las cards
+    const botonesAdd = document.querySelectorAll(".button.button-outline.button-add")
+        botonesAdd.forEach(btn => btn.addEventListener("click", (e) =>agregarAlCarrito(e)))
 }
 
-const listarServicios = () => console.table(servicios)
-
-function generarServicios() {
-    servicios.push(new Servicio(crearID(),"Diseño de sitio -One Page-".toUpperCase(),20000))
-    servicios.push(new Servicio(crearID(),"Maquetación de sitio -One Page-".toUpperCase(),50000))
-    servicios.push(new Servicio(crearID(),"Diseño de sitio -Estándar-".toUpperCase(),30000))
-    servicios.push(new Servicio(crearID(),"Maquetación de sitio -Estándar-".toUpperCase(),80000))
-    servicios.push(new Servicio(crearID(),"Diseño de sitio -Completo-".toUpperCase(),40000))
-    servicios.push(new Servicio(crearID(),"Maquetación de sitio -Completo-".toUpperCase(),110000))
-    servicios.push(new Servicio(crearID(),"Sección adicional".toUpperCase(),10000))
-    servicios.push(new Servicio(crearID(),"Diseño de sitio -UX/UI-".toUpperCase(),130000))
-    servicios.push(new Servicio(crearID(),"Mailing publicitario / Newsletter".toUpperCase(),18000))
+const cargarServicios = () => { //armo las cards en pantalla
+    contenedor.innerHTML = ""
+    servicios.forEach(servicio =>
+        contenedor.innerHTML += retornoTarjeta(servicio))
+        activarBotonesAdd()
 }
 
-generarServicios()
+cargarServicios()
 
-function generarCarrito(){
-    carrito.push(new Servicio(0001,"Diseño de sitio -One Page-".toUpperCase(),20000))
-    carrito.push(new Servicio(0002,"Maquetación de sitio -One Page-".toUpperCase(),50000))
-    carrito.push(new Servicio(0003,"Diseño de sitio -Estándar-".toUpperCase(),30000))
-
+const agregarAlCarrito = (e) => { // agregar al carrito je
+    let resultado = servicios.find(serv => serv.nombre === e.target.id)
+        if (resultado !== undefined){
+            carrito.push(resultado)
+            guardarCarrito()
+            alert("Has agregado " + resultado.nombre + " a tu carrito")
+            console.clear()
+            console.table(carrito)
+        }
 }
 
-// function recorrerServicios() {
-//     servicios.forEach(elemento => {
-//         console.log(elemento)
-//     })
-// }
+const guardarCarrito = () => {
+    if (carrito.length > 0) {
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+    }
+}
+
+const recuperarCarrito = () => {
+    if (localStorage.getItem("carrito")) {
+        let carritoRecuperado = JSON.parse(localStorage.getItem("carrito"))
+            carritoRecuperado.forEach(servicio => carrito.push(servicio))
+    } else {
+        console.warn("No se ha encontrado carrito guardado")
+    }
+}
+recuperarCarrito()
 
 function filtrarServicios() {
     let buscar = prompt("¿Qué servicio busca?").toUpperCase()
@@ -65,6 +65,8 @@ function filtrarServicios() {
         }
 
 }
+
+document.addEventListener("DOMContentLoaded", recuperarCarrito)
 
 function proyeccion(porcentaje = (prompt("Ingrese porcentaje de aumento estimado"))){
     let descuento = prompt("ingrese su descuento")
@@ -85,15 +87,3 @@ function totalCarrito (){
     alert("El precio final del carrito es: ", total*(1+IVA))
 }
 
-function ordenar () {
-    let ordenarServicios = servicios.sort ((a, b) => {
-        if (a.nombre > b.nombre){
-            return 1
-        }
-        if (a.nombre < b.nombre){
-            return -1
-        }
-        return 0
-    })
-    console.table(ordenarServicios)
-}
