@@ -10,6 +10,23 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.centrar {
+  text-align: center;
+}
+
+td.centrar p {
+  font-size: large;
+  color: red;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.verCarrito {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .contenedor {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -127,4 +144,8 @@ code {
 #titulo, #parrafo {
   color: whitesmoke;
   text-align: center;
+}
+
+body {
+  color: whitesmoke !important;
 }/*# sourceMappingURL=estilos.css.map */

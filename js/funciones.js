@@ -26,6 +26,20 @@ const cargarServicios = () => { //armo las cards en pantalla
         activarBotonesAdd()
 }
 
+const toast = (mensaje) => {
+    Toastify({
+        text: mensaje,
+        duration: 3000,
+        close: true, // iconito
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #1515f2, #5fd3e9)",
+        }
+      }).showToast();
+}
+
 cargarServicios()
 
 const agregarAlCarrito = (e) => { // agregar al carrito je
@@ -33,9 +47,7 @@ const agregarAlCarrito = (e) => { // agregar al carrito je
         if (resultado !== undefined){
             carrito.push(resultado)
             guardarCarrito()
-            alert("Has agregado " + resultado.nombre + " a tu carrito")
-            console.clear()
-            console.table(carrito)
+            toast(`Has agregado ${e.target.id} al carrito`)
         }
 }
 
@@ -67,23 +79,3 @@ function filtrarServicios() {
 }
 
 document.addEventListener("DOMContentLoaded", recuperarCarrito)
-
-function proyeccion(porcentaje = (prompt("Ingrese porcentaje de aumento estimado"))){
-    let descuento = prompt("ingrese su descuento")
-    let resultadoproyeccion = servicios.map(elemento => {
-        return{
-            nombre: elemento.nombre,
-            plista: elemento.plista,
-            proyeccion: elemento.plista * (1 + porcentaje/100),
-            descuento: elemento.plista * (1 - descuento/100)
-        }
-    })
-    console.table(resultadoproyeccion)
-}
-
-function totalCarrito (){
-    let total = carrito.reduce((acc, elemento) => acc + (elemento.plista), 0)
-    console.log("El precio final del carrito es: ", total*(1+IVA))
-    alert("El precio final del carrito es: ", total*(1+IVA))
-}
-

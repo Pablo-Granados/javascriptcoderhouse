@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./estilos/estilos.css">
     <!-- Ver en cual corresponde agregar defer y en cual no -->
     <!-- Los script aca, para el SEO -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="js/variables.js"></script>
     <script defer src="js/servicios.js"></script>
     <script defer src="js/templates.js"></script>
@@ -19,14 +21,16 @@
 
 <body>
     <header>
-        <ul>
-
-        </ul>
+        <div class="verCarrito">
+            <a href="./carrito.html">
+                <img src="./img/icons8-carrito-de-la-compra-cargado-48.png" alt="Carrito de compras">
+            </a>
+        </div>
     </header>
 <main>
     <div>
-        <h1 id="titulo">Manejo de Arrays</h1>
-        <p id="parrafo">Carga dinamica de un array</p>
+        <h1 id="titulo"></h1>
+        <p id="parrafo"></p>
     </div>
     <div class="contenedor">
 
@@ -34,12 +38,6 @@
 </main>
 
     <footer>
-        <!-- Se que es una mala, malisima practica, pero ya mejorara con el correr del curso ja -->
-        <!-- <button onclick="listarServicios()">Listar servicios</button>
-        <button onclick="generarCarrito()">Generar carrito</button> -->
-        <button onclick="filtrarServicios()">Filtrar servicios</button>
-        <button onclick="proyeccion()">Proyeccion</button>
-        <button onclick="totalCarrito()">Total carrito</button>
 
     </footer>
 
