@@ -12,19 +12,18 @@ body {
 
 .centrar {
   text-align: center;
-}
-
-td.centrar p {
-  font-size: large;
-  color: red;
-  font-weight: 800;
-  cursor: pointer;
+  padding: 1rem;
+  font-size: small;
 }
 
 .verCarrito {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+table {
+  display: table;
 }
 
 .contenedor {
@@ -146,6 +145,13 @@ code {
   text-align: center;
 }
 
+#parrafo {
+  font-size: x-large;
+}
+
 body {
   color: whitesmoke !important;
+  font-weight: auto;
+  letter-spacing: auto;
+  line-height: auto;
 }/*# sourceMappingURL=estilos.css.map */

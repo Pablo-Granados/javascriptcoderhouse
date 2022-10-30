@@ -30,6 +30,7 @@ const toast = (mensaje) => {
     Toastify({
         text: mensaje,
         duration: 3000,
+        destination: "./carrito.html",
         close: true, // iconito
         gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`

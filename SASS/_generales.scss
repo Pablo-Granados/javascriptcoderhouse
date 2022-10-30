@@ -11,15 +11,11 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+
 .centrar{
     text-align: center;
-}
-
-td.centrar p{
-    font-size: large;
-    color: red;
-    font-weight: 800;
-    cursor: pointer;
+    padding: 1rem;
+    font-size: small;
 }
 
 .verCarrito{
@@ -28,3 +24,6 @@ td.centrar p{
     justify-content: flex-end;
 }
 
+table{
+    display: table;
+}
