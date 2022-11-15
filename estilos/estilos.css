@@ -46,11 +46,12 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: #212529;
   color: whitesmoke;
   box-shadow: 0.3rem 1.25rem 1.25rem rgba(211, 211, 211, 0.3);
   border: 1px solid rgba(211, 211, 211, 0.384);
   border-radius: 1rem;
-  height: 14.35rem;
+  height: auto;
   width: 11.25rem;
 }
 .card:hover {
@@ -97,12 +98,16 @@ table {
   font-size: 1.25rem !important;
   padding: 0rem 0.5rem 0rem 0.5rem;
 }
+.card .card-button button:hover {
+  background-color: darkblue;
+  color: whitesmoke;
+}
 .card .card-button button:active {
-  background: darkmagenta !important;
-  color: white !important;
+  background: whitesmoke !important;
+  color: darkblue !important;
 }
 .card .card-button .button-add {
-  outline: 1px solid blueviolet !important;
+  outline: 1px solid darkblue !important;
 }
 .card .card-button .disabled {
   background-color: lightgray !important;

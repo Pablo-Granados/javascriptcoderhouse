@@ -1,30 +1,31 @@
+// let servicios = []
+const URL = "https://637167ec07858778617c11eb.mockapi.io/Servicios"
 
-function saludar() {
-    console.log("🤖Hola, " + usuario + " 👾")
-}
-
-function login() {
-    
-    if (usuario !== "" & usuario.length > 5) {
-        saludar(usuario)
-    } else {
-        console.warn("Usuario no reconocido")
-    }
-    alert("🤖Hola, " + usuario + " 👾")
-}
-// login()
 
 const activarBotonesAdd = ()=> { //asigno evento click en todos los botones de las cards
     const botonesAdd = document.querySelectorAll(".button.button-outline.button-add")
         botonesAdd.forEach(btn => btn.addEventListener("click", (e) =>agregarAlCarrito(e)))
 }
+const loader = ()=>`<img src="../img/loading-gif.gif" alt="">`
 
-const cargarServicios = () => { //armo las cards en pantalla
-    contenedor.innerHTML = ""
-    servicios.forEach(servicio =>
-        contenedor.innerHTML += retornoTarjeta(servicio))
-        activarBotonesAdd()
+const cargarServicios2 = async () => {
+    contenedor.innerHTML = loader()
+        let armoHTML = ""
+        let activoBotones = true
+            try {
+            const response = await fetch(URL)
+                servicios = await response.json()
+                servicios.forEach(servicio => armoHTML += retornoTarjeta(servicio))
+            } catch (error) {
+            armoHTML = retornoError()
+            activoBotones = false
+            } finally {
+            contenedor.innerHTML = armoHTML
+                activoBotones && activarBotonesAdd()
+            }
 }
+
+cargarServicios2()
 
 const toast = (mensaje) => {
     Toastify({
@@ -41,8 +42,6 @@ const toast = (mensaje) => {
       }).showToast();
 }
 
-cargarServicios()
-
 const agregarAlCarrito = (e) => { // agregar al carrito je
     let resultado = servicios.find(serv => serv.nombre === e.target.id)
         if (resultado !== undefined){
@@ -53,10 +52,8 @@ const agregarAlCarrito = (e) => { // agregar al carrito je
 }
 
 const guardarCarrito = () => {
-    if (carrito.length > 0) {
-        localStorage.setItem("carrito", JSON.stringify(carrito))
+    carrito.length > 0 && localStorage.setItem("carrito", JSON.stringify(carrito))
     }
-}
 
 const recuperarCarrito = () => {
     if (localStorage.getItem("carrito")) {
@@ -78,5 +75,3 @@ function filtrarServicios() {
         }
 
 }
-
-document.addEventListener("DOMContentLoaded", recuperarCarrito)

@@ -1,4 +1,3 @@
-const carrito = []
 const btnComprar = document.querySelector("#btnComprar")
 
 titulo.innerText = "Cotizador servicios desarrollo web"
@@ -58,7 +57,10 @@ const alerta = (titulo, textoBoton) => {
 //vaciamos el carrito y volvemos a inicio
 
 const carritoVacio = () => {
-    alerta("El carrito esta vacio!", "Añade algo")
+    alerta("El carrito esta vacio!", "Añade algo").then(result => {
+    if (result.isConfirmed){
+        location.href = "index.html"
+    }})
 } 
 
 const finalizarCompra = () => {
