@@ -21,7 +21,7 @@ const cargarCarrito = () => {
                             <td class="centrar">${servicio.imagen}</td>
                             <td class="centrar">${servicio.nombre}</td>
                             <td class="centrar">$ ${servicio.precio}</td>
-                            <td class="centrar"><button id="${servicio.nombre}" class="button-delete button-small">x</button></td>
+                            <td class="centrar"><div class="boton-delete"><button id="${servicio.nombre}" class="button-delete button-small"><div class="boton-deleteimg"><img src="./img/Vaciar Carrito.png" alt="eliminar articulo carrito"></div></button></div></td>
                         </tr>`
         })
         tbody.innerHTML = tablaHTML

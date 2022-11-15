@@ -15,6 +15,16 @@ body {
   padding: 1rem;
   font-size: small;
 }
+@media screen and (min-width: 576px) {
+  .centrar {
+    font-size: large;
+  }
+}
+@media screen and (min-width: 900px) {
+  .centrar {
+    font-size: x-large;
+  }
+}
 
 .verCarrito {
   display: flex;
@@ -24,6 +34,25 @@ body {
 
 table {
   display: table;
+}
+
+.navbar {
+  background: rgb(7, 7, 84);
+  background: linear-gradient(120deg, rgb(7, 7, 84) 21%, rgb(47, 53, 203) 100%);
+}
+
+.boton-delete {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.boton-delete .boton-deleteimg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
 }
 
 .contenedor {
@@ -112,10 +141,6 @@ table {
 .card .card-button .disabled {
   background-color: lightgray !important;
   color: whitesmoke !important;
-}
-
-body {
-  padding: 1.25rem;
 }
 
 h1,

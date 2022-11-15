@@ -1,29 +1,57 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic");
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #212529;
     font-family: 'Roboto', sans-serif;
 }
 
 
-.centrar{
+.centrar {
     text-align: center;
     padding: 1rem;
     font-size: small;
+
+    @media screen and (min-width: 576px) {
+        font-size: large;
+    }
+
+    @media screen and (min-width: 900px) {
+        font-size: x-large;
+    }
 }
 
-.verCarrito{
+.verCarrito {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-table{
+table {
     display: table;
+}
+
+.navbar {
+    background: rgb(7, 7, 84);
+    background: linear-gradient(120deg, rgba(7, 7, 84, 1) 21%, rgba(47, 53, 203, 1) 100%);
+}
+
+.boton-delete{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    .boton-deleteimg{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+    }
 }
