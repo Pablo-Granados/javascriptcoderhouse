@@ -30,6 +30,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 2%;
+
+    @media screen and (min-width: 768px) {
+        width: 100%;
+        margin-left: auto !important;
+    }
 }
 
 table {
@@ -41,17 +48,42 @@ table {
     background: linear-gradient(120deg, rgba(7, 7, 84, 1) 21%, rgba(47, 53, 203, 1) 100%);
 }
 
-.boton-delete{
+.boton-delete {
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
 
-    .boton-deleteimg{
+    .button-delete {
+        background-color: rgb(0, 0, 108) !important;
+        border: solid 1px white;
+
+        &:hover {
+            background-color: rgb(24, 120, 205) !important;
+        }
+    }
+
+    .boton-deleteimg {
         width: 100%;
         height: 100%;
         display: flex;
         position: relative;
         justify-content: center;
     }
+}
+
+.button {
+    background-color: darkblue !important;
+    color: white !important;
+    border: 2px solid white !important;
+}
+
+.swal2-html-container {
+    font-size: large !important;
+}
+
+.swal2-styled {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

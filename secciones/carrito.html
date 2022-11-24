@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="../js/variables.js"></script>
+    
+    <script defer src="../js/carrito.js"></script>
+    <title>Cotizador de servicios</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-3 text-light" href="../index.html" title="Cotizador de servicios"><img src="https://img.icons8.com/external-obivous-color-kerismaker/48/null/external-ecommerce-ecommerce-color-obivous-color-kerismaker-10.png"/></title></a>
+                <div class="verCarrito">
+                    <a href="#" title="Servicios para cotizar">
+                        <img src="../img/icons8-carrito-de-la-compra-cargado-48.png" alt="Carrito de compras">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto me-5">
+                        <li class="nav-item">
+                            <a class="nav-link text-light anim" aria-current="page"
+                                href="./Secciones/nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light anim" href="./Secciones/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light anim" href="./Secciones/contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light anim" href="./Secciones/historia.html">Historia</a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <div class="centrar-div">
+            <div>
+                <h1 id="titulo"></h1>
+                <p id="parrafo"></p>
+            </div>
+
+        </div>
+        <hr>
+        <section>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th id="tablehead" class="centrar">Imagen</th>
+                        <th id="tablehead" class="centrar">Producto</th>
+                        <th id="tablehead" class="centrar">Importe</th>
+                        <th id="tablehead" class="centrar">Quitar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <div class="centrar-div">
+            <a href="../index.html">
+                <button class="button button-outline">Añadir más servicios</button>
+            </a>
+            <button class="button" id="btnCotizar">Cotizar</button>
+        </div>
+    </main>
+</body>
+</html>

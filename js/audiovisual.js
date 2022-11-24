@@ -1,4 +1,5 @@
-const URL = "https://637167ec07858778617c11eb.mockapi.io/Servicios"
+const URLA = "https://637167ec07858778617c11eb.mockapi.io/Audiovisuales"
+
 
 const activarBotonesAdd = ()=> { //asigno evento click en todos los botones de las cards
     const botonesAdd = document.querySelectorAll(".button.button-outline.button-add")
@@ -11,9 +12,9 @@ const cargarServicios2 = async () => {
         let armoHTML = ""
         let activoBotones = true
             try {
-            const response = await fetch(URL)
+            const response = await fetch(URLA)
                 servicios = await response.json()
-                servicios.forEach(servicio => armoHTML += retornoTarjeta(servicio), servicios.push(nuevoServicio))
+                servicios.forEach(servicio => armoHTML += retornoTarjeta(servicio))
             } catch (error) {
             armoHTML = retornoError()
             activoBotones = false
@@ -61,5 +62,4 @@ const recuperarCotizador = () => {
         console.warn("No se ha encontrado cotización guardada")
     }
 }
-
 recuperarCotizador()

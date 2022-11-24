@@ -30,6 +30,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 2%;
+}
+@media screen and (min-width: 768px) {
+  .verCarrito {
+    width: 100%;
+    margin-left: auto !important;
+  }
 }
 
 table {
@@ -47,11 +55,34 @@ table {
   align-items: center;
   justify-content: center;
 }
+.boton-delete .button-delete {
+  background-color: rgb(0, 0, 108) !important;
+  border: solid 1px white;
+}
+.boton-delete .button-delete:hover {
+  background-color: rgb(24, 120, 205) !important;
+}
 .boton-delete .boton-deleteimg {
   width: 100%;
   height: 100%;
   display: flex;
   position: relative;
+  justify-content: center;
+}
+
+.button {
+  background-color: darkblue !important;
+  color: white !important;
+  border: 2px solid white !important;
+}
+
+.swal2-html-container {
+  font-size: large !important;
+}
+
+.swal2-styled {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -77,7 +108,7 @@ table {
   justify-content: space-around;
   background-color: #212529;
   color: whitesmoke;
-  box-shadow: 0.3rem 1.25rem 1.25rem rgba(211, 211, 211, 0.3);
+  box-shadow: 0.3rem 1.25rem 1.25rem rgba(109, 143, 216, 0.899);
   border: 1px solid rgba(211, 211, 211, 0.384);
   border-radius: 1rem;
   height: auto;
