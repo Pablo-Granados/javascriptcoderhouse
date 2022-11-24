@@ -3,7 +3,7 @@
     margin-bottom: 2rem;
     gap: 1.85rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
@@ -25,6 +25,12 @@
     height: auto;
     width: 11.25rem;
 
+    @media screen and (min-width: 800px) {
+        width: 20rem;
+        height: 25rem;
+        border-radius: 2.5rem;
+    }
+
     &:hover {
         transition: .2s ease-in;
         background-color: whitesmoke;
@@ -38,6 +44,10 @@
         font-size: 3.75rem;
         display: block;
         width: 1fr;
+
+        @media screen and (min-width: 800px) {
+            font-size: 4.5rem;
+        }
     }
 
     .card-id {
@@ -54,6 +64,10 @@
         font-weight: 700;
         display: block;
         width: 1fr;
+
+        @media screen and (min-width: 800px) {
+            font-size: 2rem;
+        }
     }
 
     .card-precio {
@@ -62,6 +76,10 @@
         font-weight: 500;
         display: block;
         width: 1fr;
+
+        @media screen and (min-width: 800px) {
+            font-size: 2rem;
+        }
     }
 
     .card-button {

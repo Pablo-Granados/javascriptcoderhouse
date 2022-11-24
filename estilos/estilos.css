@@ -91,7 +91,7 @@ table {
   margin-bottom: 2rem;
   gap: 1.85rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
@@ -114,6 +114,13 @@ table {
   height: auto;
   width: 11.25rem;
 }
+@media screen and (min-width: 800px) {
+  .card {
+    width: 20rem;
+    height: 25rem;
+    border-radius: 2.5rem;
+  }
+}
 .card:hover {
   transition: 0.2s ease-in;
   background-color: whitesmoke;
@@ -126,6 +133,11 @@ table {
   font-size: 3.75rem;
   display: block;
   width: 1fr;
+}
+@media screen and (min-width: 800px) {
+  .card .card-imagen {
+    font-size: 4.5rem;
+  }
 }
 .card .card-id {
   text-align: center;
@@ -141,12 +153,22 @@ table {
   display: block;
   width: 1fr;
 }
+@media screen and (min-width: 800px) {
+  .card .card-nombre {
+    font-size: 2rem;
+  }
+}
 .card .card-precio {
   text-align: center;
   font-size: 1.25;
   font-weight: 500;
   display: block;
   width: 1fr;
+}
+@media screen and (min-width: 800px) {
+  .card .card-precio {
+    font-size: 2rem;
+  }
 }
 .card .card-button {
   text-align: center;
